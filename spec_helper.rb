@@ -1,6 +1,6 @@
 require 'rspec'
 
 if ENV['COVERAGE']
-	require 'simplecov'
-	SimpleCov.start
+  require 'simplecov'
+  SimpleCov.start
 end
