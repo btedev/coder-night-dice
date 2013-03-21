@@ -48,8 +48,7 @@ class Dice
     match  = instructions.match(/(?<rolls>\d*)d(?<sides>\d+)/)
     rolls  = (match[:rolls].to_i > 0 ? match[:rolls].to_i : 1)
     sides  = match[:sides].to_i
-    result = roll_die(sides, rolls)
-    instructions[match.begin(0)...match.end(0)] = result.to_s
+    instructions[match.begin(0)...match.end(0)] = roll_die(sides, rolls).to_s
     instructions
   end
 
