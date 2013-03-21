@@ -1,7 +1,5 @@
-require 'rspec'
+require './spec_helper.rb'
 require './dice.rb'
-require 'simplecov'
-SimpleCov.start
 
 describe Dice do
   let(:subject) { Dice.new('') }

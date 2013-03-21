@@ -55,8 +55,7 @@ class Dice
 
   def process_math(instructions, operator)
     match  = instructions.match(/\d+#{Regexp.escape(operator)}\d+/)
-    result = eval(match[0])
-    instructions[match.begin(0)...match.end(0)] = result.to_s
+    instructions[match.begin(0)...match.end(0)] = eval(match[0]).to_s
     instructions
   end
 
