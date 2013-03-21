@@ -108,14 +108,14 @@ describe Dice do
       match[:post_match].should == '+10'
     end
 
-    it "matches innermost parentheses first" do
+    it "matches inner parentheses first" do
       subject.parse_parentheses('(d4(5d5-4))').should include(:match => '5d5-4')
     end
 
-    it "matches first set of parentheses when multiple available" do
-      match = subject.parse_parentheses('(5d5-4)+(3d8)')
+    it "matches left-most parentheses first" do
+      match = subject.parse_parentheses('(5d5-4)+(3d8)-(4d4)')
       match[:match].should      == '5d5-4'
-      match[:post_match].should == '+(3d8)'
+      match[:post_match].should == '+(3d8)-(4d4)'
     end
   end
 
